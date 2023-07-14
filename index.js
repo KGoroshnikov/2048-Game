@@ -65,6 +65,21 @@ function moveMe(oldPos, obj, newPos, add){
       if (clr_index == -1) clr_index = num_clr.length - 1;
       if (val >= 256) a.style.color = "white";
       a.style.backgroundColor = clrs[clr_index];
+
+      const anim = a.animate(
+        [
+          { transform: "scale(1)" },
+          { transform: "scale(1.2)" },
+          { transform: "scale(1)" }
+        ],
+        {
+          fill: "forwards",
+          easing: "ease",
+          duration: animTime * 1,
+        }
+      );
+      
+      anim.play();
     }
   }, animTime);
 }
